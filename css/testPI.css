@@ -1,0 +1,226 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("../fonts/Quicksand-Regular.otf");
+}
+
+.proj_item_wrapper {
+    width: inherit;
+    overflow: hidden;
+    background-color: #ffff00;
+}
+
+.proj_upborder {
+    height: 0px;
+    width: inherit;
+    background-image: url("../img/_backgrounds/office.png");
+}
+
+.proj_bkgd {
+    height: 50px;
+    width: inherit;
+    box-sizing: border-box;
+    padding-left: 50px;
+
+    box-shadow: inset 0 10px 10px rgba(0, 0, 0, 0.3);
+}
+
+.proj_bkgd > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.proj_title {
+    font-family: Quicksand;
+    font-size: 40px;
+
+    text-align: right;
+}
+
+.proj_desc {
+    width: 500px;
+    font-family: Quicksand;
+    font-size: 23px;
+    text-align: right;
+}
+
+.proj_show_expanded {
+    opacity: 0;
+}
+
+.proj_show_expanded > * {
+    display: inline-block;
+    vertical-align: top;
+}
+
+.proj_vert_divide {
+    height: 260px;
+    width: 20px;
+
+    background-color: #000000;
+}
+
+.proj_links {
+    height: 260px;
+    width: 200px;
+}
+
+.proj_downloadImg {
+    position: absolute;
+    right: 0px;
+}
+
+.proj_downloadInst {
+    position: relative;
+
+    height: 50px;
+    width: inherit;
+
+    font-family: Quicksand;
+    font-size: 25px;
+    color: #AAAAAA;
+
+    background-image: url("../img/_backgrounds/footer_lodyas_2.png");
+    background-color: #FF0FFF;
+
+    padding-top: 10px;
+    margin-bottom: 10px;
+
+    overflow: hidden;
+}
+
+.proj_extInst {
+    height: 30px;
+    width: inherit;
+
+    font-family: Quicksand;
+    font-size: 25px;
+    color: #AAAAAA;
+
+    background-image: url("../img/_backgrounds/footer_lodyas_2.png");
+    background-color: #FF0FFF;
+}
+
+.proj_gallery {
+    margin-top: -10px; /* properly align galleryImage with 10px offset */
+    height: 260px;
+    width: 385px; /* 115*3 + 10*4 (gallery images + margins) */
+}
+
+.proj_galleryImage {
+    height: 115px;
+    width: 115px;
+
+    margin: 10px 0 0 10px;
+
+    float: left;
+
+    background-color: #8333FF;
+
+    overflow: hidden;
+}
+
+/* Standard injection starts to fail */
+@media (max-width: 1320px) {
+
+    .proj_title {
+        font-family: Quicksand;
+        font-size: 40px !important;
+
+        text-align: left;
+    }
+
+    .proj_desc {
+        width: 300px;
+        font-family: Quicksand;
+        font-size: 23px;
+        text-align: left;
+    }
+    /*EDIT ALL BELOW, TODO */
+    .proj_gallery {
+        height: 280px;
+        width: 190px; /* 80*2 + 10*3 (gallery images + margins) */
+    }
+
+    .proj_galleryImage {
+        height: 80px;
+        width: 80px;
+
+        margin: 10px 0 0 10px;
+
+        float: left;
+
+        background-color: #8333FF;
+
+        overflow: hidden;
+    }
+}
+
+/* Gallery starts to drop into blackness; vertical space (rather than
+   horizontal dividers) separate synopsis, downloads, gallery */
+@media (max-width: 815px) {
+    .proj_synopsis {
+        width: 80%;
+        margin: 0 10%;
+    }
+
+    .proj_bkgd {
+        box-sizing: content-box;
+        padding-left: 0;
+    }
+
+    .proj_bkgd > * {
+        display: block;
+        vertical-align: baseline;
+
+        overflow: hidden;
+    }
+
+    .proj_title {
+        width: 90%;
+        margin: 0px 5% 0 5%;
+
+        overflow: hidden;
+        white-space: nowrap;
+        text-align: center;
+        text-overflow: ellipsis;
+    }
+
+    .proj_desc {
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .proj_show_expanded > * {
+        display: block;
+        vertical-align: baseline;
+        overflow: hidden;
+    }
+
+    .proj_vert_divide {
+    display: none;
+    }
+
+    .proj_links {
+        height: auto;
+        margin: 10px auto 0 auto;
+    }
+
+    .proj_gallery {
+        height: 190px;
+        width: 280px; /* 80*2 + 10*3 (gallery images + margins) */
+
+        margin: 0 auto 30px auto;
+    }
+
+    .proj_galleryImage {
+        height: 80px;
+        width: 80px;
+
+        margin: 10px 0 0 10px;
+
+        float: left;
+
+        background-color: #8333FF;
+
+    }
+}
