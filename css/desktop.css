@@ -7,6 +7,8 @@
 html {
     position: relative;
     min-height: 100%;
+
+    background-image: url("../img/_backgrounds/office.png");
 }
 
 body {
@@ -51,7 +53,7 @@ body {
 }
 
 #body_content {
-  height: 200px;
+  height: auto;
   width: 100%;
 
   padding-left: 50px;
@@ -132,7 +134,7 @@ body {
 #projects_list {
   width: inherit;
 
-  background-color: #008800;
+  background-color: #FF00FF;
 }
 
 /* MODAL COMPONENTS */

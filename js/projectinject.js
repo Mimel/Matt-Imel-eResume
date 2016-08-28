@@ -29,6 +29,9 @@ var projectTemplate = function(name, desc, img, dwds, exts, gallery) {
     //retracted (50px height, just title)
     var expanded = true;
 
+    //The position of this element in the webpage, 0 being at the top.
+    var instance = projectTemplate.instances;
+
     //Increments the number of projects; used in id-ing various blocks.
     projectTemplate.instances++;
 
@@ -73,7 +76,7 @@ var projectTemplate = function(name, desc, img, dwds, exts, gallery) {
 
         return "<div class=\"proj_item_wrapper\" id=\"p_iw_" + projectTemplate.instances + "\">    \
             <div class=\"proj_upborder\"></div>                 \
-            <div class=\"proj_bkgd\">                           \
+            <div class=\"proj_bkgd\" style=\"background-image:url(" + img + ")\">                           \
                 <div class=\"proj_synopsis\">                   \
                     <h1 class=\"proj_title\">" + n + "</h1>     \
                     <h2 class=\"proj_desc\">" + de + "</h2>     \
@@ -99,11 +102,11 @@ projectTemplate.instances = 0;
 //the list, varying the sizes of the said projects via clicking, and managing the gallery
 //modals upon clicking an image.
 $(function() {
-    new projectTemplate("Asphodel Sky", "A very simple roguelike game with 2D graphics. Made in Java.", "../img/whatever.png", [
+    new projectTemplate("Asphodel Sky", "A very simple roguelike game with 2D graphics. Made in Java.", "img/asphodelsky/Background.png", [
         ["Download .jar", "LINK"],
         ["Download .zip", "LINK"]
     ], [["Github", "LINK"]], null).printAsHTML();
-    new projectTemplate("CoffeeChat", "Server and client software allowing versatile chat between multiple users. Comes with a set of user and admin commands. Made in Java.", "../img/whatever.png", [
+    new projectTemplate("CoffeeChat", "Server and client software allowing versatile chat between multiple users. Comes with a set of user and admin commands. Made in Java.", "img/coffeechat/Background.png", [
         ["Download .jar", "LINK"],
         ["Download .zip", "LINK"]
     ], [], "coffeechat").printAsHTML();
