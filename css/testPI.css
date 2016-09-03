@@ -54,7 +54,10 @@
 
 .proj_vert_divide {
     height: 260px;
-    width: 20px;
+    width: 0px;
+
+    border-left: 2px solid #BBBBBB;
+    border-right: 2px solid #EEEEEE;
 
     background-color: #000000;
 }
@@ -62,6 +65,9 @@
 .proj_links {
     height: 260px;
     width: 200px;
+
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .proj_downloadImg {
@@ -103,12 +109,12 @@
 .proj_gallery {
     margin-top: -10px; /* properly align galleryImage with 10px offset */
     height: 260px;
-    width: 385px; /* 115*3 + 10*4 (gallery images + margins) */
+    width: 415px; /* 115*3 + 10*4 (gallery images + margins) */
 }
 
 .proj_galleryImage {
-    height: 115px;
-    width: 115px;
+    height: 125px;
+    width: 125px;
 
     margin: 10px 0 0 10px;
 

@@ -56,9 +56,7 @@ body {
   height: auto;
   width: 100%;
 
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 10px;
+  padding: 10px 50px;
   box-sizing: border-box;
 
   font-size: 20px;
@@ -163,7 +161,7 @@ body {
 
   float: left;
 
-  background-color: #FFFFFF;
+  background-color: rgba(200, 200, 200, 0.5);
 }
 
 #modal_right {
@@ -172,7 +170,7 @@ body {
 
   float: right;
 
-  background-color: #000000;
+  background-color: rgba(200, 200, 200, 0.5);
 }
 
 #modal_details {
@@ -200,6 +198,11 @@ body {
 
 /* Header starts to fail; small tablets and phones */
 @media (max-width: 700px) {
+
+    #body_content {
+        padding: 10px 20px;
+    }
+
     #signature {
       width: 90%;
       margin: 0 5%;

@@ -114,6 +114,9 @@ $(function() {
 
     //Expands and collapses each project.
     $(".proj_bkgd").click(function(e) {
+        //Do not reanimate while block is animating.
+        if($(this).is(":animated")) { return false; }
+
         if (!$(e.target).hasClass("proj_galleryImage") &&
             !$(e.target).hasClass("proj_downloadInst") &&
             !$(e.target).parent().hasClass("proj_galleryImage") && //Don't retract if image/download is clicked
@@ -158,29 +161,86 @@ $(function() {
         }
     });
 
-/*    $(".proj_galleryImage").click(function() { //On gallery icon click
+    ///MODAL///
+    var currentImage;
 
-        var verticalBound = $(window).height() * 0.6;
-        var horizontalBound = $(window).width() * 0.6;
+    function displayImageModal(element) {
+        var verticalAllowance = $(window).height() * 0.7;
+        var horizontalAllowance = $(window).width() * 0.7;
 
-        var aspectRatio = horizontalBound / verticalBound;
+        var verticalSize = $(element).find("img").get(0).naturalHeight;
+        var horizontalSize = $(element).find("img").get(0).naturalWidth;
 
-        //For the love of God, reorganize this mess
-        $("#modal_picture").css("height", $(window).height() * 0.6);
-        $("#modal_picture").css("width", $(window).width() * 0.6);
-        $("#modal_picture").css("margin-top", $(window).height() * 0.2);
-        $("#modal_picture").css("margin-left", $(window).width() * 0.2);
+        var reductionFactor;
+
+        if(verticalSize <= verticalAllowance && horizontalSize <= horizontalAllowance) {
+            reductionFactor = 1;
+        } else {
+            reductionFactor = Math.max(verticalSize/verticalAllowance, horizontalSize/horizontalAllowance);
+        }
+
+        var verticalCorrected = verticalSize/reductionFactor;
+        var horizontalCorrected = horizontalSize/reductionFactor;
+
         $("#modal_picture").css({
-            "background-image": "url(" + $(this).find("img").attr("src") + ")",
+            "height": verticalCorrected,
+            "width": horizontalCorrected,
+            "margin-top": (($(window).height() - verticalCorrected)/2),
+            "margin-left": (($(window).width() - horizontalCorrected)/2),
+            "background-image": "url(" + $(element).find("img").attr("src") + ")",
+            "background-size": (horizontalCorrected + "px " + verticalCorrected + "px"),
             "background-repeat": "no-repeat",
             "background-attachment": "fixed",
             "background-position": "center center"
         });
 
         $("#modal_wrapper").css("display", "block"); //Display modal
+    }
+
+    $(".proj_galleryImage").click(function() { //On gallery icon click
+        currentImage = this;
+        displayImageModal(this);
+
+        if(currentImage.previousSibling && currentImage.previousSibling.nodeType != 1) {
+            $("#modal_left").css("display", "none");
+        }
+        if(currentImage.nextSibling && currentImage.nextSibling.nodeType != 1) {
+            $("#modal_right").css("display", "none");
+        }
     });
 
-    $("#modal_wrapper").click(function() { //Close modal
+    $("#modal_left").click(function() {
+        currentImage = currentImage.previousSibling;
+        displayImageModal(currentImage);
+
+        if(currentImage.previousSibling && currentImage.previousSibling.nodeType != 1) {
+            $("#modal_left").css("display", "none");
+        }
+        if(currentImage.nextSibling && currentImage.nextSibling.nodeType == 1) {
+            $("#modal_right").css("display", "block");
+        }
+    });
+
+    $("#modal_right").click(function() {
+        currentImage = currentImage.nextSibling;
+        displayImageModal(currentImage);
+
+        if(currentImage.nextSibling && currentImage.nextSibling.nodeType != 1) {
+            $("#modal_right").css("display", "none");
+        }
+        if(currentImage.previousSibling && currentImage.previousSibling.nodeType == 1) {
+            $("#modal_left").css("display", "block");
+        }
+    });
+
+    //Closes the modal if the outer region (i.e. not the picture or description)
+    //is clicked.
+    $("#modal_wrapper").click(function() {
         $("#modal_wrapper").css("display", "none");
-    }); */
+        
+        $("#modal_left").css("display", "block");
+        $("#modal_right").css("display", "block");
+    }).children().click(function(e) {
+        return false;
+    });
 });
