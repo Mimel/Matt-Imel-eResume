@@ -161,6 +161,7 @@ body {
 
   float: left;
 
+<<<<<<< HEAD
   background-color: rgba(200, 200, 200, 0.2);
   background-image: url("../img/_icons/arrow_left.png");
   background-repeat: no-repeat;
@@ -168,6 +169,8 @@ body {
 }
 
 #modal_left:hover {
+=======
+>>>>>>> origin/master
   background-color: rgba(200, 200, 200, 0.5);
 }
 
@@ -177,10 +180,14 @@ body {
 
   float: right;
 
+<<<<<<< HEAD
   background-color: rgba(200, 200, 200, 0.2);
   background-image: url("../img/_icons/arrow_right.png");
   background-repeat: no-repeat;
   background-position: center center;
+=======
+  background-color: rgba(200, 200, 200, 0.5);
+>>>>>>> origin/master
 }
 
 #modal_right:hover {
@@ -217,7 +224,10 @@ body {
 @media (max-width: 700px) {
 
     #body_content {
+<<<<<<< HEAD
         font-size: 16px;
+=======
+>>>>>>> origin/master
         padding: 10px 20px;
     }
 
