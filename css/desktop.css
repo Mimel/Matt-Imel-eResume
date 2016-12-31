@@ -161,6 +161,10 @@ body {
 
   float: left;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
   background-color: rgba(200, 200, 200, 0.2);
   background-image: url("../img/_icons/arrow_left.png");
   background-repeat: no-repeat;
@@ -168,6 +172,11 @@ body {
 }
 
 #modal_left:hover {
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
   background-color: rgba(200, 200, 200, 0.5);
 }
 
@@ -177,10 +186,20 @@ body {
 
   float: right;
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> origin/master
   background-color: rgba(200, 200, 200, 0.2);
   background-image: url("../img/_icons/arrow_right.png");
   background-repeat: no-repeat;
   background-position: center center;
+<<<<<<< HEAD
+=======
+=======
+  background-color: rgba(200, 200, 200, 0.5);
+>>>>>>> origin/master
+>>>>>>> origin/master
 }
 
 #modal_right:hover {
@@ -217,7 +236,14 @@ body {
 @media (max-width: 700px) {
 
     #body_content {
+<<<<<<< HEAD
         font-size: 16px;
+=======
+<<<<<<< HEAD
+        font-size: 16px;
+=======
+>>>>>>> origin/master
+>>>>>>> origin/master
         padding: 10px 20px;
     }
 

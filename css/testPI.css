@@ -6,10 +6,13 @@
 .proj_item_wrapper {
     width: inherit;
     overflow: hidden;
+<<<<<<< HEAD
     background-color: #EEEEEE;
 }
 
 .proj_item_wrapper:hover {;
+=======
+>>>>>>> origin/master
     background-color: #FFFFFF;
 }
 
@@ -72,12 +75,15 @@
 
     margin-left: 10px;
     margin-right: 10px;
+<<<<<<< HEAD
 }
 
 .proj_link_disablable {
     pointer-events: none;
     cursor: default;
     text-decoration: none;
+=======
+>>>>>>> origin/master
 }
 
 .proj_downloadImg {
