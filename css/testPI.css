@@ -6,7 +6,11 @@
 .proj_item_wrapper {
     width: inherit;
     overflow: hidden;
-    background-color: #ffff00;
+    background-color: #EEEEEE;
+}
+
+.proj_item_wrapper:hover {;
+    background-color: #FFFFFF;
 }
 
 .proj_upborder {
@@ -54,7 +58,10 @@
 
 .proj_vert_divide {
     height: 260px;
-    width: 20px;
+    width: 0px;
+
+    border-left: 2px solid #BBBBBB;
+    border-right: 2px solid #EEEEEE;
 
     background-color: #000000;
 }
@@ -62,6 +69,15 @@
 .proj_links {
     height: 260px;
     width: 200px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.proj_link_disablable {
+    pointer-events: none;
+    cursor: default;
+    text-decoration: none;
 }
 
 .proj_downloadImg {
@@ -78,7 +94,7 @@
     font-family: Quicksand;
     font-size: 25px;
     color: #AAAAAA;
-
+    
     background-image: url("../img/_backgrounds/footer_lodyas_2.png");
     background-color: #FF0FFF;
 
@@ -103,12 +119,12 @@
 .proj_gallery {
     margin-top: -10px; /* properly align galleryImage with 10px offset */
     height: 260px;
-    width: 385px; /* 115*3 + 10*4 (gallery images + margins) */
+    width: 415px; /* 115*3 + 10*4 (gallery images + margins) */
 }
 
 .proj_galleryImage {
-    height: 115px;
-    width: 115px;
+    height: 125px;
+    width: 125px;
 
     margin: 10px 0 0 10px;
 

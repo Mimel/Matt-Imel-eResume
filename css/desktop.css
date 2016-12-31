@@ -7,6 +7,8 @@
 html {
     position: relative;
     min-height: 100%;
+
+    background-image: url("../img/_backgrounds/office.png");
 }
 
 body {
@@ -51,12 +53,10 @@ body {
 }
 
 #body_content {
-  height: 200px;
+  height: auto;
   width: 100%;
 
-  padding-left: 50px;
-  padding-right: 50px;
-  padding-top: 10px;
+  padding: 10px 50px;
   box-sizing: border-box;
 
   font-size: 20px;
@@ -132,7 +132,7 @@ body {
 #projects_list {
   width: inherit;
 
-  background-color: #008800;
+  background-color: #FF00FF;
 }
 
 /* MODAL COMPONENTS */
@@ -161,7 +161,14 @@ body {
 
   float: left;
 
-  background-color: #FFFFFF;
+  background-color: rgba(200, 200, 200, 0.2);
+  background-image: url("../img/_icons/arrow_left.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#modal_left:hover {
+  background-color: rgba(200, 200, 200, 0.5);
 }
 
 #modal_right {
@@ -170,11 +177,21 @@ body {
 
   float: right;
 
-  background-color: #000000;
+  background-color: rgba(200, 200, 200, 0.2);
+  background-image: url("../img/_icons/arrow_right.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#modal_right:hover {
+  background-color: rgba(200, 200, 200, 0.5);
 }
 
 #modal_details {
-
+  position: absolute;
+  bottom: 0px;
+  height: 50px;
+  background-color: rgb(200, 150, 100);
 }
 
 /* Injection starts to fail */
@@ -198,6 +215,12 @@ body {
 
 /* Header starts to fail; small tablets and phones */
 @media (max-width: 700px) {
+
+    #body_content {
+        font-size: 16px;
+        padding: 10px 20px;
+    }
+
     #signature {
       width: 90%;
       margin: 0 5%;
