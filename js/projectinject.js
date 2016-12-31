@@ -33,9 +33,6 @@ var projectTemplate = function (name, desc, img, dwds, exts, gallery) {
     //The position of this element in the webpage, 0 being at the top.
     instance = projectTemplate.instances;
 
-    //The position of this element in the webpage, 0 being at the top.
-    var instance = projectTemplate.instances;
-
     //Increments the number of projects; used in id-ing various blocks.
     projectTemplate.instances += 1;
 
@@ -202,7 +199,6 @@ $(function() {
 
         var verticalSize = $(element).find("img").get(0).naturalHeight;
         var horizontalSize = $(element).find("img").get(0).naturalWidth;
-<<<<<<< HEAD
 
         var reductionFactor;
 
@@ -212,17 +208,6 @@ $(function() {
             reductionFactor = Math.max(verticalSize/verticalAllowance, horizontalSize/horizontalAllowance);
         }
 
-=======
-
-        var reductionFactor;
-
-        if(verticalSize <= verticalAllowance && horizontalSize <= horizontalAllowance) {
-            reductionFactor = 1;
-        } else {
-            reductionFactor = Math.max(verticalSize/verticalAllowance, horizontalSize/horizontalAllowance);
-        }
-
->>>>>>> origin/master
         var verticalCorrected = verticalSize/reductionFactor;
         var horizontalCorrected = horizontalSize/reductionFactor;
 
@@ -242,7 +227,6 @@ $(function() {
     }
 
     $(".proj_galleryImage").click(function() { //On gallery icon click
-<<<<<<< HEAD
         //A little convoluted; This if-statement makes sure that the modal doesn't
         //open when the project tab is retracted; otherwise, the modal would still
         //open if the user clicked where the icon would be.
@@ -257,16 +241,6 @@ $(function() {
             if(currentImage.nextSibling && currentImage.nextSibling.nodeType != 1) {
                 $("#modal_right").css("display", "none");
             }
-=======
-        currentImage = this;
-        displayImageModal(this);
-
-        if(currentImage.previousSibling && currentImage.previousSibling.nodeType != 1) {
-            $("#modal_left").css("display", "none");
-        }
-        if(currentImage.nextSibling && currentImage.nextSibling.nodeType != 1) {
-            $("#modal_right").css("display", "none");
->>>>>>> origin/master
         }
     });
 
@@ -298,11 +272,7 @@ $(function() {
     //is clicked.
     $("#modal_wrapper").click(function() {
         $("#modal_wrapper").css("display", "none");
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> origin/master
         $("#modal_left").css("display", "block");
         $("#modal_right").css("display", "block");
     }).children().click(function(e) {
