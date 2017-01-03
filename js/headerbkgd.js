@@ -64,7 +64,7 @@ function init() {
 
         grid = new Array(Math.ceil(canvas.height / SQUARE_PXLENGTH));
         for (var x = 0; x < grid.length; x++) {
-            grid[x] = new Array(200);
+            grid[x] = new Array(1);
             for (var y = 0; y < grid[x].length; y++) {
                 grid[x][y] = new colorSquare(230 + (x * 2) + (y * 2), 30, 50)
             }

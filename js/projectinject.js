@@ -64,7 +64,7 @@ var projectTemplate = function (name, desc, img, dwds, exts, gallery) {
         }
 
         var galleryStack = "";
-        for (var x = 1; x <= 6; x++) { //TEMP: Change 6 to adaptable max
+        for (var x = 1; x <= 1; x++) { //TEMP: Change 6 to adaptable max
             galleryStack += "<div class=\"proj_galleryImage\"><img src=\"img/" + gallery + "/img_" + x + ".png\" /></div>";
         }
 
@@ -103,15 +103,20 @@ projectTemplate.instances = 0;
 //the list, varying the sizes of the said projects via clicking, and managing the gallery
 //modals upon clicking an image.
 $(function() {
+    //$(".proj_downloadInst").fitText();
+    
+    //List of projects.
     new projectTemplate("Asphodel Sky", "A very simple roguelike game with 2D graphics. Made in Java.", "img/asphodelsky/Background.png", [
-        ["Download .jar", "LINK"],
-        ["Download .zip", "LINK"]
-    ], [["Github", "LINK"]], null).printAsHTML();
+        ["Download .jar", "PLACEHOLDER"],
+        ["Download .zip", "downloads/AsphodelSky.zip"]
+    ], [["Github", "https://github.com/Mimel/AsphodelSky"]], "asphodelsky").printAsHTML();
     new projectTemplate("CoffeeChat", "Server and client software allowing versatile chat between multiple users. Comes with a set of user and admin commands. Made in Java.", "img/coffeechat/Background.png", [
-        ["Download .jar", "LINK"],
-        ["Download .zip", "LINK"]
-    ], [], "coffeechat").printAsHTML();
-    new projectTemplate("This Website", "An intuitive, easy-to-navigate compilation of all my projects, including this one.", "../img/whatever.png", [], [], null).printAsHTML();
+        ["Download .jar", "PLACEHOLDER"],
+        ["Download .zip", "downloads/CoffeeChat.zip"]
+    ], [["Github", "https://github.com/CoffeeChat"]], "coffeechat").printAsHTML();
+    new projectTemplate("This Website", "An intuitive, easy-to-navigate compilation of all my projects, including this one.", "../img/whatever.png", [
+        ["Download .zip", "downloads/Matt-Imel-ePortfolio.zip"]
+    ], [["Github", "https://github.com/Mimel/Matt-Imel-eResume"]], null).printAsHTML();
     
     //Initially disable links.
     $("a.proj_link_disablable").click(function(e) {
@@ -119,6 +124,8 @@ $(function() {
         e.stopImmediatePropagation();
         return false;
     });
+    
+    //END INIT
 
     //Expands and collapses each project.
     $(".proj_bkgd").click(function(e) {
