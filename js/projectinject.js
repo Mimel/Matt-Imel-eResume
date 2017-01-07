@@ -119,10 +119,8 @@ $(function() {
     ], [["Github", "https://github.com/Mimel/Matt-Imel-eResume"]], null).printAsHTML();
     
     //Initially disable links.
-    $("a.proj_link_disablable").click(function(e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        return false;
+    $("a.proj_link_disablable").css({
+        "display": "none"
     });
     
     //END INIT
@@ -137,15 +135,8 @@ $(function() {
             !$(e.target).parent().hasClass("proj_galleryImage") && //Don't retract if image/download is clicked
             !$(e.target).parent().hasClass("proj_downloadInst") || //Don't retract if image/download is clicked
             $(this).css("height") == "50px") { //Ignore when expanding
-
+            
             if ($(this).css("height") == "50px") { //Opens
-                //Enables links.
-                $(this).find("a.proj_link_disablable").off();
-                
-                $(this).find("a.proj_link_disablable").css({
-                    "pointer-events": "auto",
-                    "cursor": "pointer"
-                });
                 
                 if($(window).width() > 1320) {
                     $(this).find(".proj_title").animate({
@@ -158,6 +149,7 @@ $(function() {
                         height: $(this).get(0).scrollHeight,
                         paddingTop: "20px"
                     }, 500);
+                    
                 } else {
                     $(this).animate({
                         height: "300px",
@@ -167,25 +159,23 @@ $(function() {
                 $(this).find(".proj_show_expanded").animate({
                     "opacity": "1"
                 }, "slow");
+                
+                //Reenable.
+                $("a.proj_link_disablable").css({
+                    "display": "inline"
+                });
 
             } else { //Closes
-                //Disables links.
-                $(this).find("a.proj_link_disablable").click(function(e) {
-                    e.preventDefault();
-                    e.stopImmediatePropagation();
-                    return false;
-                });
-                
-                $(this).find("a.proj_link_disablable").css({
-                    "pointer-events": "none",
-                    "cursor": "default"
-                });
-                
                 
                 $(this).animate({
                     height: "50px",
                     paddingTop: "0px"
-                }, 500, function() {});
+                }, 500, function() {
+                    $("a.proj_link_disablable").css({
+                        "display": "none"
+                    });
+                });
+
                 $(this).find(".proj_show_expanded").animate({
                     opacity: "0"
                 }, "slow");

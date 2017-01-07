@@ -75,7 +75,7 @@
 }
 
 .proj_link_disablable {
-    pointer-events: none;
+    display: none;
     cursor: default;
     text-decoration: none;
 }
