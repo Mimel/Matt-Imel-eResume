@@ -118,17 +118,13 @@ $(function() {
         ["Download .zip", "downloads/Matt-Imel-ePortfolio.zip"]
     ], [["Github", "https://github.com/Mimel/Matt-Imel-eResume"]], null).printAsHTML();
     
-    //Initially disable links.
-    $("a.proj_link_disablable").css({
-        "display": "none"
-    });
-    
     //END INIT
 
     //Expands and collapses each project.
+    //TODO double clicking on project is problematic.
     $(".proj_bkgd").click(function(e) {
         //Do not reanimate while block is animating.
-        if($(this).is(":animated")) { return false; }
+        if($(this).hasClass("velocity-animating")) { console.log("Ayy..."); return false; }
 
         if (!$(e.target).hasClass("proj_galleryImage") &&
             !$(e.target).hasClass("proj_downloadInst") &&
@@ -139,47 +135,47 @@ $(function() {
             if ($(this).css("height") == "50px") { //Opens
                 
                 if($(window).width() > 1320) {
-                    $(this).find(".proj_title").animate({
+                    $(this).find(".proj_title").velocity({
                         fontSize: "60px"
                     }, "slow");
                 }
 
                 if ($(window).width() <= 815) {
-                    $(this).animate({
+                    $(this).velocity({
                         height: $(this).get(0).scrollHeight,
                         paddingTop: "20px"
                     }, 500);
                     
                 } else {
-                    $(this).animate({
+                    $(this).velocity({
                         height: "300px",
                         paddingTop: "20px"
                     }, 500);
                 }
-                $(this).find(".proj_show_expanded").animate({
+                $(this).find(".proj_show_expanded").velocity({
                     "opacity": "1"
                 }, "slow");
                 
-                //Reenable.
-                $("a.proj_link_disablable").css({
+                //Enable links.
+                $(this).find(".proj_link_disablable").css({
                     "display": "inline"
                 });
 
             } else { //Closes
                 
-                $(this).animate({
+                $(this).velocity({
                     height: "50px",
                     paddingTop: "0px"
                 }, 500, function() {
-                    $("a.proj_link_disablable").css({
+                    $(this).find(".proj_link_disablable").css({
                         "display": "none"
                     });
                 });
 
-                $(this).find(".proj_show_expanded").animate({
+                $(this).find(".proj_show_expanded").velocity({
                     opacity: "0"
                 }, "slow");
-                $(this).find(".proj_title").animate({
+                $(this).find(".proj_title").velocity({
                     fontSize: "40px"
                 }, "slow");
             }
