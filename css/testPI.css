@@ -136,7 +136,7 @@
 }
 
 /* Standard injection starts to fail */
-@media (max-device-width: 1320px) {
+@media (max-width: 1320px) {
 
     .proj_title {
         font-family: Quicksand;
@@ -173,7 +173,7 @@
 
 /* Gallery starts to drop into blackness; vertical space (rather than
    horizontal dividers) separate synopsis, downloads, gallery */
-@media (max-device-width: 815px) {
+@media (max-width: 815px) {
     .proj_synopsis {
         width: 80%;
         margin: 0 10%;

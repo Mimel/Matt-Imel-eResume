@@ -134,24 +134,27 @@ $(function() {
             
             if ($(this).css("height") == "50px") { //Opens
                 
+                //Increase title font size, if screen width parameters are true.
                 if($(window).width() > 1320) {
                     $(this).find(".proj_title").velocity({
                         fontSize: "60px"
                     }, "slow");
                 }
-
+                
+                //Increase height of window to height of content, plus padding on small screen size/mobile
                 if ($(window).width() <= 815) {
                     $(this).velocity({
                         height: $(this).get(0).scrollHeight,
                         paddingTop: "20px"
                     }, 500);
-                    
+                //On all other screens, increase height to fixed 300px.
                 } else {
                     $(this).velocity({
                         height: "300px",
                         paddingTop: "20px"
                     }, 500);
                 }
+                //Display previously hidden download elements.
                 $(this).find(".proj_show_expanded").velocity({
                     "opacity": "1"
                 }, "slow");
